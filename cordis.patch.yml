@@ -28,7 +28,9 @@
   config:
     includeHarnessIdentity: false
     personaPrefix: ""
-    personaSuffix: Your working directory is {{cwd}}.
+    # 0.2.1 起 cwd 不再是宿主插值变量；工作目录由 dsh-working-directory 提供，
+    # 这里留空，0.2.0 仍由插件在 assemble 时补回工作目录句。
+    personaSuffix: ""
 
 - id: dsh-purge
   inject: [systemPrompt, tools]
